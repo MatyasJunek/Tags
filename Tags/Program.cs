@@ -83,18 +83,15 @@ namespace ConsoleApp15
         }
     }
     class Program
-    {
-        
-       
+    {     
         static void Main(string[] args)
-        {
+        {          
             string commandPattern = @"\<[a-z]+\>\w+.\w*\</[a-z]+\>";
             Regex regex = new Regex(commandPattern);
             ChangeText change = new ChangeText();
 
-            string text = "K této knize se svět chová velice <blue>laskavě</blue>. Jen z různých edicí vydaných v <redback>Anglii</redback> se už prodalo přes půldruhého miliónu výtisků" +
-                 ". A v <note>Chicagu</note> se mi už před mnoha lety dostalo ujištění - z úst jistého podnikavého piráta nyní v. v. - že víc než <capital>milión výtisků</capital> se " +
-                 "prodalo ve <under>Spojených státech</under>.";
+            string text = "Testovací <blue>text</blue>. Nevím, jak program volat z příkazového <note>řádku</note>. Jinak program <redback>funguje</redback>. " +
+                "Ema má <capital>mísu</capital>. <under>Máma</under> mele maso";
 
             MatchCollection found = regex.Matches(text);
 
