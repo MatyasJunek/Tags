@@ -86,11 +86,11 @@ namespace ConsoleApp15
     {     
         static void Main(string[] args)
         {          
-            string commandPattern = @"\<[a-z]+\>\w+.\w*\</[a-z]+\>";
+            string commandPattern = @"\<[a-z]+\>\w*.\w*.\w*</[a-z]+\>";
             Regex regex = new Regex(commandPattern);
             ChangeText change = new ChangeText();
 
-            string text = "Testovací <blue>text</blue>. Nevím, jak program volat z příkazového <note>řádku</note>. Jinak program <redback>funguje</redback>. " +
+            string text = "Testovací <blue>text a</blue>. Nevím, jak program volat z příkazového <note>řádku</note>. Jinak program <redback>funguje</redback>. " +
                 "Ema má <capital>mísu</capital>. <under>Máma</under> mele maso";
 
             MatchCollection found = regex.Matches(text);
